@@ -1,12 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-function album(){
-    <div className = "albumCard">
-        <div className = "albumImage">
+export default function album() {
+    return (
+        <div>
+            
         </div>
-        <div className = "albumName">
-
-        </div>
-
-    </div>
+    )
 }
