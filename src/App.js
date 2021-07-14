@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
       async function getAlbums(){
-        const result = await axios.get(`https://itunes.apple.com/lookup?id=${artistID}&entity=album`); 
+        const result = await axios.get(`/lookup?id=${artistID}&entity=album`); 
         setAlbum(result.data.results.slice(1, result.length));
       }
       getAlbums();
