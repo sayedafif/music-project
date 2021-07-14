@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
-
+import AlbumCard from './components/Album/albumCard';
+import Navbar from "./components/Navbar/navbar";
 
 function App() {
 
@@ -18,16 +18,21 @@ function App() {
   useEffect(() => {
       async function getAlbums(){
         const result = await axios.get(`https://itunes.apple.com/lookup?id=471744&entity=album`); 
-        setAlbum(result.data.results);
+        setAlbum(result.data.results.slice(1, result.length));
       }
       getAlbums();
   });
 
+
   return (
     <div className="App">
-        <h1>Music Project</h1>
-        <div className="row">
+      <Navbar />
+      <div className="app_content">
+        <div class="info">
 
+
+        <h1>Music Project</h1>
+        <h3>Your favorite Artist is Coldplay </h3>
         </div>
         {/* 
         <select value={artist} onChange={(event) =>{
@@ -40,17 +45,19 @@ function App() {
         </select>
 
         <h3>Your favorite Artist is {artist} </h3> */}
-        <h3>Your favorite Artist is Coldplay </h3>
-        <div>
-
-          <div>
+        
+          <div className = "app_album">
             {albumInfo.map(album => {
-              return <p> {album.artistName}  ---- {album.collectionName}</p>
+                return <AlbumCard album={album}/>
+
+              //return <p> {album.artistName}  ---- {album.collectionName}</p>
             })}
+
           </div>
 
-        </div>
     </div>
+    </div>
+        
   );
 }
 

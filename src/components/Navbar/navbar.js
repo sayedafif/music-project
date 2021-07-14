@@ -1,19 +1,10 @@
 import React from 'react'
 
-export default function Navbar() {
+export default function navbar() {
     return (
-        <nav>
-            <div className="logo">Music</div>
-            <ul>
-                <li>Home</li>
-                <li>Our Products</li>
-                <li>About Us</li>
-                <li>Contact</li>
-            </ul>
-            <div className="search">
-                <i className="fa fa-search"></i>
-                <i className="fa fa-shopping-basket"></i>
-            </div>
-        </nav>
+        <header className='navbar'>
+        <div className='navbar__title navbar__item'>Music Project</div>
+        <div className='navbar__item'><a href="https://sayedafif.com"  target="_blank" rel="noopener noreferrer"> About Me </a></div>    
+        </header>
     )
 }
