@@ -9,6 +9,7 @@ export default function albumCard({album}) {
 
             <h4 className="albumName">{album.artistName}</h4>
             <p className="albumName">{album.collectionName}</p>
+            <p className="albumName">{album.releaseDate}</p>
             </a>
         </div>
     )

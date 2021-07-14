@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import AlbumCard from './components/Album/albumCard';
 import Navbar from "./components/Navbar/navbar";
-
+import Footer from "./components/Footer/footer";
 function App() {
 
 
@@ -27,12 +27,12 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="app_content">
-        <div class="info">
+        <div className="app_info">
 
 
         <h1>Music Project</h1>
         <div className ="dropdown">
-        <select  name='languages' value={artist} onChange={(event) =>{
+        <select  name='artists' value={artist} onChange={(event) =>{
           setArtist(event.target.options[event.target.selectedIndex].text);
           setArtistID(event.target.value);
         }}>
@@ -43,8 +43,7 @@ function App() {
         </select>
         </div>
 
-        <h3>Let us check all albums of <a href={albumInfo.artistViewUrl} target="_blank" rel="noopener noreferrer"> {artist} </a></h3>
-        
+        <h3>Let us check all albums of {artist} </h3>
         </div>
         
        
@@ -56,7 +55,9 @@ function App() {
           </div>
 
     </div>
+    <Footer />
     </div>
+    
         
   );
 }
