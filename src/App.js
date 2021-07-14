@@ -4,6 +4,7 @@ import './App.css';
 import AlbumCard from './components/Album/albumCard';
 import Navbar from "./components/Navbar/navbar";
 import Footer from "./components/Footer/footer";
+
 function App() {
 
 
@@ -40,6 +41,8 @@ function App() {
           <option value = "453523728" label = "Prateek Kuhad"> Prateek Kuhad </option>
           <option value = "479756766" label = "The Weeknd"> The Weeknd </option>
           <option value = "471744" label = "Coldplay"> Coldplay </option>
+          <option value = "63346553" label = "Rihanna"> Rihanna </option>
+          
         </select>
         </div>
 
@@ -49,6 +52,7 @@ function App() {
        
           <div className = "app_album">
             {albumInfo.map(album => {
+                album.releaseDate = album.releaseDate.substring(0, 4)
                 return <AlbumCard album={album}/>
           })}
 
